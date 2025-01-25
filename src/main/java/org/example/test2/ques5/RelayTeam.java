@@ -48,13 +48,11 @@ public class RelayTeam implements Team{
             throw new IllegalArgumentException("no player on team");
         }
         String faster = "";
-        Double fasterTime = 0.0;
+        Double fasterTime = Double.MAX_VALUE;
         for (Map.Entry<String,Double>entry:runner.entrySet()){
             if (entry.getValue()< fasterTime) {
                 faster = entry.getKey();
                 fasterTime = entry.getValue();
-            } else if(entry.getValue()==fasterTime){
-
             }
 
         }

@@ -15,6 +15,6 @@ public class Main {
         System.out.println(team1.getFastestRunner());
         System.out.println(team2.getAverageTime());
         System.out.println(team1.hasFasterAverage(team2));
-        System.out.println(team2.toString());
+        System.out.println(team2);
     }
 }

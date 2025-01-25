@@ -7,11 +7,11 @@ public class ques3 {
     public static int removeEvensInRange(List<Integer> list, int start, int end) {
         int count=0;
         for(int i=start;i<end;i++){
-            int num = list.get(i);
+            int num=list.get(i);
             if(num%2==0){
                 count++;
                 list.remove(i);
-                i++;
+                i--;
                 end--;
             }
         }

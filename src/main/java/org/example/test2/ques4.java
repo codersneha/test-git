@@ -1,14 +1,22 @@
 package org.example.test2;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class ques4 {
     private static String mostPopularHobby(Map<String, Set<String>> m) {
         String mostPopular="";
-        int count=0;
-        for(Set<String>hobby:m.values()){
-
+        int mostCount=0;
+        Map<String,Integer> hobbyFreq= new HashMap<>();
+        for (Map.Entry<String, Set<String>> entry : m.entrySet()) {
+            for (String hobby : entry.getValue()) {
+                hobbyFreq.put(hobby,hobbyFreq.getOrDefault(hobby,0)+1);
+                if (hobbyFreq.get(hobby)>mostCount){
+                    mostPopular=hobby;
+                    mostCount=hobbyFreq.get(hobby);
+                }
+            }
         }
         return mostPopular;
     }
